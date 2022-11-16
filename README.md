@@ -2,32 +2,17 @@
 
 To get the project up and running see the below instructions:
 
-1. To obtain the text plain source code you must decrypt the .enc files. If interested, contact me for a decryption password.
-
+1. Download .zip file to your local computer.
+2. Extract files. Zip file requires password. You have to get in contact with me for password.
+3. After extract files change directories to docker-jira-worklogs/ and locate bootstrap.sh
+4. Run bootstrap.sh
 ```
-openssl enc -aes-256-cbc -d -in panel.py.enc -out panel.py
-openssl enc -aes-256-cbc -d -in auth.py.enc -out auth.py
-openssl enc -aes-256-cbc -d -in Dockerfile.enc -out Dockerfile
-```
-
-2. Run docker build
-
-```
-docker build -t devel-worklog .
+   ./boostrap.sh
 ```
 
-3. Create .jira-credentials file (use template below, just replace the placeholders with your information)
+### Version 
+1.0.0.
 
-```
-#!/bin/bash
+### Contact
 
-export JIRA_URL=REPLACEME
-export JIRA_USER=REPLACEME
-export JIRA_PASSWD=REPLACEME
-```
-
-4. Launch container
-
-```
-docker run -it --mount type=bind,source=$PWD/.jira-credentials,target=/opt/jira-client/.jira-credentials devel-worklog bash
-```
+Jaziel Lopez <jazlopez @ github.com>
